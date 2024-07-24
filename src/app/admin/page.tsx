@@ -1,4 +1,3 @@
-"use client"
 import DataTable from '@/components/table/DataTable'
 import StatCard from '@/components/StatCard'
 import { getRecentAppointmentList } from '@/lib/actions/appointment.action'
@@ -6,15 +5,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { columns } from '@/components/table/columns'
-import { useRouter } from 'next/navigation'
 
 const Admin = async () => {
 
-    const encryptedKey = typeof window !== 'undefined' ? window.localStorage.getItem('accessKey') : null;
-    const router = useRouter();
-    if (!encryptedKey) {
-        router.push('/')
-    }
+    // const encryptedKey = typeof window !== 'undefined' ? window.localStorage.getItem('accessKey') : null;
+    // const router = useRouter();
+    // if (!encryptedKey) {
+    //     router.push('/')
+    // }
     const appointments = await getRecentAppointmentList();
     return (
         <div className='flex flex-col mx-auto max-w-7xl gap-y-14'>
